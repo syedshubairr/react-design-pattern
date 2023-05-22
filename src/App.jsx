@@ -1,20 +1,47 @@
 import "./App.css";
-import { SplitScreen } from "./components/SplitScreen";
-
-const LeftComponent = ({ name }) => {
-  return <h1 style={{ backgroundColor: "blue" }}>{name}</h1>;
-};
-const RightComponent = ({ msg }) => {
-  return <h1 style={{ backgroundColor: "red" }}>{msg}!</h1>;
-};
+import RegularList from "./RegularList";
+import LargePersonListItem from "./people/LargePersonListItem";
+import SmallPersonListItem from "./people/SmallPersonListItem";
+const People = [
+  {
+    name: "Shubair",
+    age: 21,
+    hairColor: "blue",
+    hobbies: ["A", "B", "C"],
+  },
+  {
+    name: "Shah",
+    age: 21,
+    hairColor: "black",
+    hobbies: ["A", "B", "C"],
+  },
+  {
+    name: "Kilo",
+    age: 21,
+    hairColor: "blue",
+    hobbies: ["A", "B", "C"],
+  },
+  {
+    name: "Sh",
+    age: 21,
+    hairColor: "bred",
+    hobbies: ["A", "B", "C"],
+  },
+];
 
 function App() {
   return (
     <>
-      <SplitScreen leftWeight={1} rightWeight={3}>
-        <LeftComponent name="Shubair" />
-        <RightComponent msg="Hello" />
-      </SplitScreen>
+      <RegularList
+        items={People}
+        resourceName="person"
+        itemComponent={SmallPersonListItem}
+      />
+      <RegularList
+        items={People}
+        resourceName="person"
+        itemComponent={LargePersonListItem}
+      />
     </>
   );
 }
