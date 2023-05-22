@@ -1,7 +1,10 @@
 import "./App.css";
+import NumberedList from "./NumberedList";
 import RegularList from "./RegularList";
 import LargePersonListItem from "./people/LargePersonListItem";
 import SmallPersonListItem from "./people/SmallPersonListItem";
+import LargeProductListItem from "./products/LargeProductListItem";
+import SmallProductListItem from "./products/SmallProductListItem";
 const People = [
   {
     name: "Shubair",
@@ -28,6 +31,32 @@ const People = [
     hobbies: ["A", "B", "C"],
   },
 ];
+const products = [
+  {
+    name: "Shoes",
+    price: 20,
+    description: "Good",
+    rating: 4.2,
+  },
+  {
+    name: "Bike",
+    price: 20,
+    description: "Good",
+    rating: 4.2,
+  },
+  {
+    name: "Cars",
+    price: 20,
+    description: "Good",
+    rating: 4.2,
+  },
+  {
+    name: "Goods",
+    price: 20,
+    description: "Good",
+    rating: 4.2,
+  },
+];
 
 function App() {
   return (
@@ -41,6 +70,16 @@ function App() {
         items={People}
         resourceName="person"
         itemComponent={LargePersonListItem}
+      />
+      <NumberedList
+        items={products}
+        resourceName="product"
+        itemComponent={SmallProductListItem}
+      />
+      <NumberedList
+        items={products}
+        resourceName="product"
+        itemComponent={LargeProductListItem}
       />
     </>
   );

@@ -1,5 +1,8 @@
-export default function SmallProductListItem() {
+export default function SmallProductListItem({ product }) {
+  const { name, price } = product;
   return (
-    <div>SmallProductListItem</div>
-  )
+    <h3>
+      {name} - {price}
+    </h3>
+  );
 }

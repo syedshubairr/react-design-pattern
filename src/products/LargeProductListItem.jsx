@@ -1,5 +1,11 @@
-export default function LargeProductListItem() {
+export default function LargeProductListItem({ product }) {
+  const { name, price, description, rating } = product;
   return (
-    <div>LargeProductListItem</div>
-  )
+    <>
+      <h3>{name}</h3>
+      <p>{price}</p>
+      <h3>{description}</h3>
+      <p>Average Rating: {rating}</p>
+    </>
+  );
 }
